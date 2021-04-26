@@ -1,0 +1,31 @@
+---
+title: "EasyPlotExample"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+#Demonstration of EasyPlot
+library(EasyPlot)
+#Creating new dataframe with 3 normal distributions
+x <- rnorm(20,5,2)
+y <- rnorm(20,5,2)
+z <- rnorm(20,5,2)
+testFrame <- data.frame(x,y,z)
+#Show the various graphs
+EasyPlotgg(testFrame, x, y)
+EasyPlothist(x)
+EasyPlotvis(testFrame,x,y)
+#New data for pie chart
+data <- c(20,30,23,56,67)
+labels <- c("Cat 1", "Cat 2", "Cat 3", "Cat 4", "Cat 5")
+#new data for visualization
+cars <- mtcars
+cars <- head(cars,8)
+EasyPlotvis(cars, cars$mpg, cars$hp)
+
+```
+
